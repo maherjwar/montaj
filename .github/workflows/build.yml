@@ -41,6 +41,8 @@ jobs:
 
       - name: Build debug APK
         working-directory: ${{ steps.loc.outputs.dir }}
+        env:
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: gradle assembleDebug --console=plain
 
       - uses: actions/upload-artifact@v4
